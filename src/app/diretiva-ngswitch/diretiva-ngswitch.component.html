@@ -1,0 +1,14 @@
+<nav class="nav nav-primary">
+    <a class="nav-link" [class.active]="aba == 'Ativo'"
+    (click)="aba = 'Ativo'">Ativo</a>
+    <a class="nav-link" [class.active]="aba == 'Link'"
+    (click)="aba = 'Link'">Link</a>
+    <a class="nav-link" [class.active]="aba == 'Desativado'"
+    (click)="aba = 'Desativado'">Desativado</a>
+  </nav>
+
+  <div class="containner" [ngSwitch]="aba">
+    <p *ngSwitchCase="'Link'">O link Link está ativo</p>
+    <p *ngSwitchCase="'Desativado'">O link Desativado está ativo</p>
+    <p *ngSwitchDefault>O link Ativo está ativo</p>
+  </div>
